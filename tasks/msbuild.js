@@ -107,7 +107,7 @@ module.exports = function (grunt) {
             } else {
                 grunt.log.writeln(('MSBuild failed with code: ' + code).cyan + projName);
                 if (options.failOnError) {
-                    grunt.warn('MSBuild exited with a failure code: ' + code);
+                    grunt.warn({name: grunt.task.current.nameArgs, nameArgs:grunt.task.current.nameArgs,type: 'task',message:'MSBuild exited with a failure code: ' + code});
                 }
             }
             cb();
